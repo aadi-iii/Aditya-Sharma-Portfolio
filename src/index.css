@@ -15,14 +15,6 @@
   --shadow-card: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -35,6 +27,7 @@
   :root {
     --blue-rgb: 237 245 255;
     --green-rgb: 125 161 35;
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   body {
@@ -47,6 +40,18 @@
 
   body:has(.card[data-color="green"]:hover) {
     background-color: rgb(var(--green-rgb) / 25%);
+  }
+
+  /* Accessibility: Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -67,15 +72,15 @@
 }
 
 @utility input {
-  @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+  @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg block w-full p-2.5 mt-2.5 font-normal shadow-card transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-slate-300 focus:ring-4 focus:ring-blue-500/15 focus:border-blue-500 focus:outline-hidden;
 }
 
 @utility textarea {
-  @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card resize-none overflow-hidden max-h-60;
+  @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 mt-2.5 font-normal shadow-card resize-none overflow-hidden max-h-60 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-slate-300 focus:ring-4 focus:ring-blue-500/15 focus:border-blue-500 focus:outline-hidden;
 }
 
 @utility btn {
-  @apply text-white bg-linear-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-hidden focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-pointer;
+  @apply text-white bg-linear-to-r from-[#00c6ff] to-[#0072ff] font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:scale-[1.015] hover:shadow-lg hover:shadow-blue-500/25 active:translate-y-0 active:scale-[0.99] focus:ring-4 focus:outline-hidden focus:ring-blue-300;
 }
 
 @utility header {
@@ -91,11 +96,11 @@
 }
 
 @utility info-box {
-  @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
+  @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)];
 }
 
 @utility neo-btn {
-  @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
+  @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-900/10 active:translate-y-0.5 active:scale-[0.99];
 }
 
 @utility cta {
@@ -151,8 +156,12 @@
 /* section container */
 .block-container {
   position: relative;
-  transition: 250ms;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
   perspective: 500px;
+}
+
+.block-container:hover {
+  transform: translateY(-2px);
 }
 
 /* skills btn back */
@@ -162,12 +171,12 @@
   z-index: -1;
   width: inherit;
   height: inherit;
-  transition: 250ms;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
   transform-style: preserve-3d;
   transform-origin: bottom right;
   transform: rotateZ(15deg);
   will-change: transform;
-  box-shadow: 16px 0 40px #e4e4e4;
+  box-shadow: 14px 0 35px rgba(0, 0, 0, 0.06);
 }
 
 /* other btn styles */
@@ -206,10 +215,10 @@
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #ffffff33;
+  background-color: #ffffff40;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  transition: 250ms;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), background-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
   transform-style: preserve-3d;
   transform-origin: top left;
   overflow: hidden;
@@ -218,10 +227,12 @@
 /* btn hover effects */
 .block-container:hover > .btn-back {
   transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+  box-shadow: 18px 0 45px rgba(0, 0, 0, 0.12);
 }
 
 .block-container:hover > .btn-front {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+  background-color: #ffffff65;
 }
 
 /* Hide reCAPTCHA v3 badge */

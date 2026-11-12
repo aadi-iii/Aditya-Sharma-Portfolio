@@ -40,17 +40,17 @@ const About = () => {
 
         {/* quick info pills & resume link */}
         <div className="mt-4 flex flex-wrap gap-3 items-center text-sm">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-medium border border-blue-200">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 font-medium border border-blue-200 hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-100/60 hover:shadow-xs transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-default select-none">
             📍 {EXTRA_LINKS.location}
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 font-medium border border-amber-200">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 text-amber-800 font-medium border border-amber-200 hover:-translate-y-0.5 hover:border-amber-300 hover:bg-amber-100/60 hover:shadow-xs transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-default select-none">
             🎓 Amity University (2024–2027)
           </span>
           <a
             href={EXTRA_LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 text-pink-700 font-medium hover:bg-pink-100 transition-colors border border-pink-200"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-pink-50 text-pink-700 font-medium border border-pink-200 hover:bg-pink-100 hover:border-pink-300 hover:-translate-y-0.5 hover:shadow-xs active:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
           >
             📸 Instagram
           </a>
@@ -58,7 +58,7 @@ const About = () => {
             href={EXTRA_LINKS.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors shadow-xs"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-600/20 active:translate-y-0 active:scale-[0.99] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
           >
             📄 View Resume
           </a>
@@ -102,10 +102,10 @@ const About = () => {
             {/* map over each skill */}
             {SKILLS.map((skill) => (
               <div
-                className="flex flex-col items-center gap-2"
+                className="group flex flex-col items-center gap-2 cursor-pointer"
                 key={`skill_${skill.name}`}
               >
-                <div className="block-container w-20 h-20">
+                <div className="block-container w-20 h-20 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105">
                   {/* bg btn */}
                   <div className="btn-back rounded-xl" />
                   {/* skill icon */}
@@ -116,11 +116,11 @@ const About = () => {
                     <img
                       src={skill.imageUrl}
                       alt={skill.name}
-                      className="w-1/2 h-1/2 object-contain"
+                      className="w-1/2 h-1/2 object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
                     />
                   </div>
                 </div>
-                <span className="text-xs font-semibold text-slate-700 text-center max-w-[80px] truncate">
+                <span className="text-xs font-semibold text-slate-700 group-hover:text-blue-600 transition-colors duration-300 text-center max-w-[80px] truncate select-none">
                   {skill.name}
                 </span>
               </div>
@@ -150,7 +150,7 @@ const About = () => {
                   key={`Experience_${experience.title}`}
                   date={experience.date}
                   icon={
-                    <div className="flex justify-center items-center w-full h-full">
+                    <div className="flex justify-center items-center w-full h-full transition-transform duration-300 hover:scale-110">
                       {/* experience icon */}
                       <img
                         src={experience.icon}
@@ -191,7 +191,7 @@ const About = () => {
                     {experience.points.map((point, i) => (
                       <li
                         key={`Experience_${experience.title}_point_${i + 1}`}
-                        className="text-black-500/70 font-normal pl-1 text-sm"
+                        className="text-black-500/70 font-normal pl-1 text-sm leading-relaxed"
                       >
                         {point}
                       </li>

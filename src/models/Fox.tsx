@@ -9,7 +9,7 @@
 // Import React hooks and components
 import { useEffect, useMemo, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import { useGraph } from "@react-three/fiber";
+import { useFrame, useGraph } from "@react-three/fiber";
 import type { ThreeElements } from "@react-three/fiber";
 import { clone } from "three/addons/utils/SkeletonUtils.js";
 import type { Bone, Group, MeshStandardMaterial, SkinnedMesh } from "three";
@@ -42,6 +42,7 @@ type GLTFResult = GLTF & {
 const Fox = ({ currentAnimation, ...props }: FoxProps) => {
   // Create a reference for the group that contains the fox model
   const group = useRef<Group>(null);
+  const innerGroup = useRef<Group>(null);
 
   // Load the 3D model and animations using useGLTF and useAnimations hooks
   const { scene, animations } = useGLTF(foxScene);
@@ -51,6 +52,18 @@ const Fox = ({ currentAnimation, ...props }: FoxProps) => {
     "nodes" | "materials"
   >;
   const { actions } = useAnimations(animations, group);
+
+  // Subtle mouse-responsive gaze tracking
+  useFrame((state) => {
+    if (innerGroup.current) {
+      const targetY = state.pointer.x * 0.15;
+      const targetX = -state.pointer.y * 0.08;
+      innerGroup.current.rotation.y +=
+        (targetY - innerGroup.current.rotation.y) * 0.05;
+      innerGroup.current.rotation.x +=
+        (targetX - innerGroup.current.rotation.x) * 0.05;
+    }
+  });
 
   // Use useEffect to play the specified animation when it changes
   useEffect(() => {
@@ -64,7 +77,7 @@ const Fox = ({ currentAnimation, ...props }: FoxProps) => {
   // Return the JSX for the Fox component with group, mesh, and skeleton
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Sketchfab_Scene">
+      <group ref={innerGroup} name="Sketchfab_Scene">
         <primitive object={nodes.GLTF_created_0_rootJoint} />
 
         {/* SkinnedMesh components for different parts of the fox */}

@@ -383,7 +383,7 @@ const DirectMailContactForm = ({
         <div className="flex flex-col sm:flex-row gap-3 items-center">
           <button
             type="submit"
-            className="btn w-full sm:w-auto"
+            className="btn w-full sm:w-auto hover:-translate-y-0.5 active:scale-98 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
@@ -392,7 +392,7 @@ const DirectMailContactForm = ({
           <button
             type="button"
             onClick={copyEmail}
-            className="px-4 py-2.5 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-50 transition-colors w-full sm:w-auto"
+            className="px-4 py-2.5 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100 hover:border-slate-400 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-xs hover:shadow-sm w-full sm:w-auto"
           >
             {copied ? "✓ Copied Email!" : "📋 Copy Email Address"}
           </button>
@@ -417,10 +417,10 @@ const Contact = () => {
           <h1 className="head-text">Get in Touch</h1>
 
           {/* direct contact cards */}
-          <div className="mt-4 flex flex-wrap gap-2 text-sm">
+          <div className="mt-4 flex flex-wrap gap-2.5 text-sm">
             <a
               href={`mailto:${EXTRA_LINKS.email}`}
-              className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 font-medium hover:bg-blue-100 transition-colors border border-blue-200"
+              className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 font-medium hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-xs active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border border-blue-200"
             >
               ✉️ {EXTRA_LINKS.email}
             </a>
@@ -428,7 +428,7 @@ const Contact = () => {
               href={EXTRA_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 font-medium hover:bg-slate-100 transition-colors border border-slate-200"
+              className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 font-medium hover:bg-slate-100 hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-xs active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border border-slate-200"
             >
               💼 LinkedIn
             </a>
@@ -436,7 +436,7 @@ const Contact = () => {
               href={EXTRA_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-pink-50 text-pink-700 font-medium hover:bg-pink-100 transition-colors border border-pink-200"
+              className="px-3 py-1.5 rounded-lg bg-pink-50 text-pink-700 font-medium hover:bg-pink-100 hover:border-pink-300 hover:-translate-y-0.5 hover:shadow-xs active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border border-pink-200"
             >
               📸 Instagram
             </a>
@@ -444,7 +444,7 @@ const Contact = () => {
               href={EXTRA_LINKS.source_code}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 font-medium hover:bg-slate-100 transition-colors border border-slate-200"
+              className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 font-medium hover:bg-slate-100 hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-xs active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border border-slate-200"
             >
               🐙 GitHub
             </a>

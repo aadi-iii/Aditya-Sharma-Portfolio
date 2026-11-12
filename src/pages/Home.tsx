@@ -155,13 +155,13 @@ const Home = () => {
 
         {/* Sound On/Off toggle button */}
         <aside
-          className="absolute bottom-2 left-2"
+          className="absolute bottom-4 left-4 z-10"
           title={isPlayingMusic ? "Sound On" : "Sound Off"}
         >
           <img
             src={isPlayingMusic ? soundon : soundoff}
             alt={isPlayingMusic ? "Sound On" : "Sound Off"}
-            className="w-10 h-10 cursor-pointer object-contain"
+            className="w-11 h-11 cursor-pointer object-contain transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-110 hover:-translate-y-0.5 active:scale-95 drop-shadow-md hover:drop-shadow-xl"
             onClick={() => setIsPlayingMusic(!isPlayingMusic)}
           />
         </aside>
