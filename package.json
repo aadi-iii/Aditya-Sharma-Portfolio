@@ -1,0 +1,79 @@
+{
+  "name": "aditya-3d-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@react-spring/three": "^10.1.2",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-google-recaptcha-v3": "^1.11.0",
+    "react-router-dom": "^7.18.5",
+    "react-vertical-timeline-component": "^4.0.0",
+    "resend": "^6.35.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@netlify/functions": "^6.1.0",
+    "@netlify/vite-plugin": "^3.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-vertical-timeline-component": "^3.3.6",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.14.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.5",
+    "vite-plugin-pwa": "^2.0.0",
+    "workbox-window": "^7.0.0"
+  },
+  "author": {
+    "name": "Aditya Sharma",
+    "email": "adityaa.sharma.mail@gmail.com",
+    "url": "https://github.com/aadi-iii"
+  },
+  "description": "3D Interactive Portfolio of Aditya Sharma - Aspiring Full-Stack Web Developer",
+  "keywords": [
+    "html",
+    "css",
+    "react",
+    "reactjs",
+    "3d",
+    "threejs",
+    "portfolio",
+    "3d portfolio",
+    "3d animations",
+    "modern",
+    "modern ui",
+    "modern ux",
+    "tailwindcss",
+    "javascript",
+    "js",
+    "typescript",
+    "resend",
+    "netlify"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aadi-iii/3d_portfolio.git"
+  },
+  "homepage": "https://github.com/aadi-iii/3d_portfolio#readme"
+}
