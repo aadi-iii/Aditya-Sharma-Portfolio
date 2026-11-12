@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import { EXTRA_LINKS, SIDEBAR_LINKS, SITE_NAME } from "../constants";
-import { github, linkedin } from "../assets/icons";
+import { github, linkedin, instagram } from "../assets/icons";
 
 // navbar
 const Navbar = () => {
@@ -43,6 +43,17 @@ const Navbar = () => {
           className="hover:opacity-80 transition-opacity"
         >
           <img src={linkedin} alt="LinkedIn" className="w-5 h-5 object-contain rounded-xs" />
+        </a>
+
+        {/* Instagram */}
+        <a
+          href={EXTRA_LINKS.instagram}
+          target="_blank"
+          rel="noreferrer noopener"
+          title="Instagram Profile"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <img src={instagram} alt="Instagram" className="w-5 h-5 object-contain rounded-xs" />
         </a>
 
         {/* GitHub */}

@@ -433,6 +433,14 @@ const Contact = () => {
               💼 LinkedIn
             </a>
             <a
+              href={EXTRA_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-lg bg-pink-50 text-pink-700 font-medium hover:bg-pink-100 transition-colors border border-pink-200"
+            >
+              📸 Instagram
+            </a>
+            <a
               href={EXTRA_LINKS.source_code}
               target="_blank"
               rel="noopener noreferrer"

@@ -11,7 +11,7 @@ An immersive, interactive 3D portfolio website built with **React 19**, **Three.
 *Amity University (2024–2027)*  
 📍 Ghaziabad, Uttar Pradesh, India  
 ✉️ [adityaa.sharma.mail@gmail.com](mailto:adityaa.sharma.mail@gmail.com)  
-🌐 [LinkedIn](https://www.linkedin.com/in/aditya-sharma-624177355/) | [GitHub](https://github.com/aadi-iii) | [Resume](https://aadi-iii.github.io/Aditya-Sharma-Resume/)
+🌐 [LinkedIn](https://www.linkedin.com/in/aditya-sharma-624177355/) | [GitHub](https://github.com/aadi-iii) | [Instagram](https://www.instagram.com/whyy.aadiii?igsh=MWlwMTJtaGV1N215aw%3D%3D) | [Resume](https://aadi-iii.github.io/Aditya-Sharma-Resume/)
 
 ---
 

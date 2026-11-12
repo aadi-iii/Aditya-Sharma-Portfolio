@@ -47,6 +47,14 @@ const About = () => {
             🎓 Amity University (2024–2027)
           </span>
           <a
+            href={EXTRA_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 text-pink-700 font-medium hover:bg-pink-100 transition-colors border border-pink-200"
+          >
+            📸 Instagram
+          </a>
+          <a
             href={EXTRA_LINKS.resume}
             target="_blank"
             rel="noopener noreferrer"

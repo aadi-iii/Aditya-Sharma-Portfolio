@@ -45,6 +45,7 @@ export type Skill = {
 export type ExtraLinks = {
   source_code: string;
   linkedin: string;
+  instagram: string;
   email: string;
   resume: string;
   location: string;
@@ -95,6 +96,7 @@ export const SITE_NAME = "Aditya Sharma";
 export const EXTRA_LINKS: ExtraLinks = {
   source_code: "https://github.com/aadi-iii",
   linkedin: "https://www.linkedin.com/in/aditya-sharma-624177355/",
+  instagram: "https://www.instagram.com/whyy.aadiii?igsh=MWlwMTJtaGV1N215aw%3D%3D",
   email: "adityaa.sharma.mail@gmail.com",
   resume: "https://aadi-iii.github.io/Aditya-Sharma-Resume/",
   location: "Ghaziabad, Uttar Pradesh, India",

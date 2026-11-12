@@ -41,6 +41,7 @@ import universe from "./universe.svg";
 import heart from "./heart.svg";
 import amity from "./amity.svg";
 import ewb from "./ewb.svg";
+import instagram from "./instagram.svg";
 
 // export icons
 export {
@@ -84,4 +85,5 @@ export {
   heart,
   amity,
   ewb,
+  instagram,
 };
