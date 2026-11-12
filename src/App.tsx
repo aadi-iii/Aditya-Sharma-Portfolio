@@ -11,7 +11,7 @@ const App = () => {
   return (
     <main className="bg-slate-300/20 h-full">
       {/* routes */}
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         {/* navbar */}
         <Navbar />
 
@@ -21,6 +21,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
         </Routes>
 
         {/* TODO: footer */}
